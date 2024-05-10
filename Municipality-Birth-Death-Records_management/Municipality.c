@@ -1,10 +1,12 @@
+//headre files
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-void bcreate(char[],char[]);
-void dcreate(char[],char[]);
-void s_name(char[]);
-void s_date(char[]);
+
+void bcreate(char[],char[]);     //add birth records
+void dcreate(char[],char[]);    //add death records
+void s_name(char[]);            //search records based on name
+void s_date(char[]);             //search records based on date
 void display();
 struct node
 {
@@ -13,6 +15,7 @@ struct node
     struct node *next;
 };
 struct node *bhead,*dhead;
+
 void main()
 {
     int choice;
@@ -59,6 +62,7 @@ void main()
         }
     }while(choice!=6);
 }
+
 void bcreate(char bname[10],char bdate[10])
 {
     struct node *ptr=(struct node*)malloc(sizeof(struct node));
@@ -89,6 +93,7 @@ void bcreate(char bname[10],char bdate[10])
         printf("\n");
     }
 }
+
 void dcreate(char dname[10],char ddate[10])
 {
     struct node *ptr=(struct node*)malloc(sizeof(struct node));
@@ -119,6 +124,7 @@ void dcreate(char dname[10],char ddate[10])
         printf("\n");
     }
 }
+
 void s_name(char nkey[10])
 {
      struct node *temp1 = bhead;
@@ -170,6 +176,7 @@ void s_name(char nkey[10])
             }
         }
 }
+
 void s_date(char dkey[10])
 {
     struct node *temp1 = bhead;
@@ -221,6 +228,7 @@ void s_date(char dkey[10])
             }
         }
 }
+
 void display()
 {
     struct node *temp1;
